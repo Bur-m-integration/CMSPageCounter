@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+                <resource id="MI_CMSPageCounter::customy_cms_page_counter" title="customy_cms_page_counter"
+                          sortOrder="10">
+                    <resource id="MI_CMSPageCounter::customy_cms_page_counter_save"
+                              title="Save customy_cms_page_counter" sortOrder="10"/>
+                    <resource id="MI_CMSPageCounter::customy_cms_page_counter_delete"
+                              title="Delete customy_cms_page_counter" sortOrder="20"/>
+                    <resource id="MI_CMSPageCounter::customy_cms_page_counter_update"
+                              title="Update customy_cms_page_counter" sortOrder="30"/>
+                    <resource id="MI_CMSPageCounter::customy_cms_page_counter_view"
+                              title="View customy_cms_page_counter" sortOrder="40"/>
+                </resource>
+                <resource id="Magento_Backend::stores">
+                    <resource id="Magento_Backend::stores_settings">
+                        <resource id="Magento_Config::config">
+                            <resource id="MI_CMSPageCounter::config_mi_cmspagecounter"
+                                      title="cms_page_counter_section"/>
+                        </resource>
+                    </resource>
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>

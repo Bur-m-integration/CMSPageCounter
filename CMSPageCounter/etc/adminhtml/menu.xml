@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="MI_CMSPageCounter::customy_cms_page_counter" title="CMS Page Counter"
+             module="MI_CMSPageCounter" sortOrder="100" resource="Magento_Backend::content"
+             parent="Magento_Backend::content"
+             action="mi_cmspagecounter/customycmspagecounter/index"/>
+    </menu>
+</config>

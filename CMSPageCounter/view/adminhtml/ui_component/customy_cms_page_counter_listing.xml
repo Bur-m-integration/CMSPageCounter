@@ -1,0 +1,74 @@
+<?xml version="1.0" ?>
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">
+                customy_cms_page_counter_listing.customy_cms_page_counter_listing_data_source
+            </item>
+        </item>
+    </argument>
+    <settings>
+        <spinner>customy_cms_page_counter_columns</spinner>
+        <deps>
+            <dep>customy_cms_page_counter_listing.customy_cms_page_counter_listing_data_source</dep>
+        </deps>
+    </settings>
+    <dataSource name="customy_cms_page_counter_listing_data_source" component="Magento_Ui/js/grid/provider">
+        <settings>
+            <storageConfig>
+                <param name="indexField" xsi:type="string">id</param>
+            </storageConfig>
+            <updateUrl path="mui/index/render"/>
+        </settings>
+        <aclResource>MI_CMSPageCounter::customy_cms_page_counter</aclResource>
+        <dataProvider name="customy_cms_page_counter_listing_data_source"
+                      class="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+            <settings>
+                <requestFieldName>id</requestFieldName>
+                <primaryFieldName>id</primaryFieldName>
+            </settings>
+        </dataProvider>
+    </dataSource>
+    <listingToolbar name="listing_top">
+        <settings>
+            <sticky>true</sticky>
+        </settings>
+        <bookmark name="bookmarks"/>
+        <columnsControls name="columns_controls"/>
+        <filters name="listing_filters"/>
+        <paging name="listing_paging"/>
+    </listingToolbar>
+    <columns name="customy_cms_page_counter_columns">
+        <selectionsColumn name="ids">
+            <settings>
+                <indexField>id</indexField>
+            </settings>
+        </selectionsColumn>
+        <column name="id">
+            <settings>
+                <filter>text</filter>
+                <sorting>asc</sorting>
+                <label translate="true">ID</label>
+            </settings>
+        </column>
+        <column name="cms_page_id">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">CMS page ID</label>
+            </settings>
+        </column>
+        <column name="backend_counter">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Backend counter</label>
+            </settings>
+        </column>
+        <column name="frontend_counter">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Frontend counter</label>
+            </settings>
+        </column>
+    </columns>
+</listing>
